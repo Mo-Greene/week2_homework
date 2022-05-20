@@ -26,6 +26,14 @@ public class Person extends Timestamped {
     @Column(nullable = false)
     private String job;
 
+    public Person(PersonRequestDto requestDto){
+        this.name = requestDto.getName();
+        this.address = requestDto.getAddress();
+        this.age = requestDto.getAge();
+        this.job = requestDto.getJob();
+
+    }
+
     public Person(String name, String address, int age, String job) {
         this.name = name;
         this.address = address;
